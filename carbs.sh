@@ -48,6 +48,9 @@ cd ~/.local/src/dwmblocks/
 sudo make install
 cd $SCRIPT_DIR
 
+echo "Installing geoip"
+sudo pacman -S --noconfirm install geoip
+
 echo "Replacing modified dwmblock modules"
 cp -f sb-volume ~/.local/bin/statusbar/
 cp -f sb-cpu ~/.local/bin/statusbar/
