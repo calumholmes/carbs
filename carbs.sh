@@ -49,7 +49,7 @@ sudo make install
 cd $SCRIPT_DIR
 
 echo "Installing geoip"
-sudo pacman -S --noconfirm install geoip
+sudo pacman -S --noconfirm geoip
 
 echo "Replacing modified dwmblock modules"
 cp -f sb-volume ~/.local/bin/statusbar/
