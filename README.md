@@ -22,5 +22,7 @@ Download the code from github and extract to a folder. Change directory to the f
 
 sh carbs.sh
 
+You'll be prompted to select a theme. Enter the number of the theme you want and it will start applying it.
 It should be basically instant.
-After you should renew dwm.
+
+After it's done, you should renew dwm.

@@ -1,0 +1,37 @@
+!! Transparency (0-1):
+*.alpha: 0.8
+
+!! Set a default font and font size as below:
+*.font: monospace:size=10
+
+/* name		dark	light */
+/* black	0	8 */
+/* red		1	9 */
+/* green	2	10 */
+/* yellow	3	11 */
+/* blue		4	12 */
+/* purple	5	13 */
+/* cyan		6	14 */
+/* white	7	15 */
+
+/* ! Slate Theme ! */
+
+*background:#000000
+*foreground:#d3d3d3
+
+*color0:  #201E24
+*color8:  #837C78
+*color1:  #2D2B30
+*color9:  #89827D
+*color2:  #3F3D40
+*color10: #A7A099
+*color3:  #413C3E
+*color11: #C2BEC1
+*color4:  #EFE8DC
+*color12: #C3BCB2
+*color5:  #4E4321
+*color13: #CBC5BA
+*color6:  #6E6765
+*color14: #E3DDD2
+*color7:  #837E81
+*color15: #EFE8DC

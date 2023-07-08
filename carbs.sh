@@ -2,9 +2,40 @@
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURECE[0]}")" &> /dev/null && pwd)
 
-echo "Appending "Autumn" theme to ~/.config/x11/xresources"
-echo "Note: This assumes you have not already altered the xresources file."
-cat autumntheme >> ~/.config/x11/xresources
+# Theming
+echo "What theme do you want?"
+echo "1. Autumn, 2. Petals, 3. Slate"
+echo -n "Choose: "
+read themechoice
+
+mkdir ~/Pictures
+
+case $themechoice in
+1)
+	echo "Replacing ~/.config/x11/xresources"
+	cp -f autumntheme ~/.config/x11/xresources
+	echo "Setting background"
+	cp autumnbg.jpg ~/Pictures/
+	setbg ~/Pictures/autumnbg.jpg
+	;;
+2)
+	echo "Replacing ~/.config/x11/xresources"
+	cp -f petalstheme ~/.config/x11/xresources
+	echo "Setting background"
+	cp petalsbg.jpg ~/Pictures/
+	setbg ~/Pictures/petalsbg.jpg
+	;;
+3)
+	echo "Replacing ~/.config/x11/xresources"
+	cp -f slatetheme ~/.config/x11/xresources
+	echo "Setting background"
+	cp slatebg.jpg ~/Pictures/
+	setbg ~/Pictures/slatebg.jpg
+	;;
+*)
+	echo "Not valid. Skipping..."
+esac
+
 echo "Making theme available on startup"
 cp -f xprofile ~/.config/x11/xprofile
 
@@ -28,8 +59,6 @@ cp -f sb-iplocate ~/.local/bin/statusbar/
 
 echo "Finishing up..."
 xrdb ~/.config/x11/xresources
-cp -f bg.jpg ~/Pictures/bg.jpg
-setbg ~/Pictures/bg.jpg
 
 echo "Done! Welcome to CARBS!"
 echo 'Please renew dwm by pressing super+backspace and selecting "Renew dwm"'
