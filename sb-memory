@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Modified to remove emojis + change right-click notification to reflect change
+case $BLOCK_BUTTON in
+	1) notify-send "Memory Intensive Processes:" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)" ;;
+	2) setsid -f "$TERMINAL" -e htop ;;
+	3) notify-send "Memory module." "\- Shows Memory Used/Total.
+- Click to show memory intensive processes.
+- Middle click to open htop." ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+free --mebi | sed -n '2{p;q}' | awk '{printf ("Mem: %2.1fG/%1.1fG\n", ( $3 / 1024), ($2 / 1024))}'
