@@ -1,5 +1,7 @@
 # CARBS Install Script! (Minor changes to Luke Smiths LARBS)
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURECE[0]}")" &> /dev/null && pwd)
+
 echo "Appending "Autumn" theme to ~/.config/x11/xresources"
 echo "Note: This assumes you have not already altered the xresources file."
 cat autumntheme >> ~/.config/x11/xresources
@@ -11,6 +13,9 @@ cp -f sysact ~/.local/bin/sysact
 
 echo "Replacing dwmblocks config"
 cp -f config.h ~/.local/src/dwmblocks/config.h
+cd ~/.local/src/dwmblocks/
+sudo make install
+cd $SCRIPT_DIR
 
 echo "Replacing modified dwmblock modules"
 cp -f sb-volume ~/.local/bin/statusbar/
