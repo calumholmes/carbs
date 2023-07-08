@@ -64,6 +64,8 @@ cp -f sb-iplocate ~/.local/bin/statusbar/
 echo "Finishing up theming..."
 xrdb ~/.config/x11/xresources
 
+echo "Do you want to add this logo on startup? (Artix only)"
+cat carbs.txt
 echo -n "Add the CARBS motd on startup? Say now if you've aready done it. (Y/n): "
 read askmotd
 case $askmotd in
